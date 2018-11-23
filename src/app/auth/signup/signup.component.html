@@ -1,37 +1,50 @@
-<h2>Register</h2>
-<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="firstName">First Name</label>
-    <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-      <div *ngIf="f.firstName.errors.required">First Name is required</div>
+<app-navbar></app-navbar>
+<div class="main">
+  <div class="wrap">
+    <div class="section group">
+      <div class="cont span_2_of_blog">
+        <div class="login-title">
+          <h4 class="title">User Signup</h4>
+          <div id="loginbox" class="loginbox">
+            <form action="" method="post" name="login" id="login-form">
+              <fieldset class="input">
+                <p id="login-form-username">
+                  <label for="modlgn_username">Username</label>
+                  <input id="modlgn_username" type="text" name="username" class="inputbox" size="18" autocomplete="on">
+                </p>
+                <p id="login-form-username">
+                  <label for="modlgn_username">Name</label>
+                  <input id="modlgn_username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
+                </p>
+                <p id="login-form-username">
+                  <label for="modlgn_username">email</label>
+                  <input id="modlgn_username" type="email" name="email" class="inputbox" size="18" autocomplete="on">
+                </p>
+                <p id="login-form-username">
+                  <label for="modlgn_username">Contact</label>
+                  <input id="modlgn_username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
+                </p>
+                <p id="login-form-username">
+                  <label for="modlgn_username">Adress</label>
+                  <input id="modlgn_username" type="text" name="username" class="inputbox" size="18" autocomplete="off">
+                </p>
+                <p id="login-form-password">
+                  <label for="modlgn_passwd">Password</label>
+                  <input id="modlgn_passwd" type="password" name="password" class="inputbox" size="18" autocomplete="off">
+                </p>
+                <p id="login-form-remember">
+                  <label for="modlgn_remember" class="checkbox">Remember me</label>
+                  <input id="modlgn_remember" type="checkbox" name="remember" class="checkbox" value="yes" autocomplete="off">
+                </p>
+                <input type="submit" name="Submit" class="button" value="Signup">
+                <a [routerLink]="['/signin']" class="button" style="margin-left: 30px" > Signin</a>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+
+<app-tags></app-tags>
     </div>
   </div>
-  <div class="form-group">
-    <label for="lastName">Last Name</label>
-    <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-      <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-      <div *ngIf="f.username.errors.required">Username is required</div>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="password">Password</label>
-    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-      <div *ngIf="f.password.errors.required">Password is required</div>
-      <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-    </div>
-  </div>
-  <div class="form-group">
-    <button [disabled]="loading" class="btn btn-primary">Register</button>
-    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-    <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
-  </div>
-</form>
+</div>

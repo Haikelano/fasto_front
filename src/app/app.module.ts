@@ -10,6 +10,9 @@ import { ContainerComponent } from './home/container/container.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { NavbarComponent } from './home/navbar/navbar.component';
 import { SidebarComponent } from './home/sidebar/sidebar.component';
+import {FormsModule} from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { TagsComponent } from './home/tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { SidebarComponent } from './home/sidebar/sidebar.component';
     ContainerComponent,
     FooterComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

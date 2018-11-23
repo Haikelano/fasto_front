@@ -13,8 +13,8 @@
         <a href="#nav" title="Show navigation">Show navigation</a>
         <a href="#" title="Hide navigation">Hide navigation</a>
         <ul class="clearfix">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="start.html"><span>Get Started</span></a></li>
+          <li class="active"><a [routerLink]="['/']">Home</a></li>
+          <li><a  [routerLink]="['signin']"><span>Get Started</span></a></li>
           <li><a href="work.html"><span>How it Works</span></a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="support.html">Support</a></li>
@@ -24,7 +24,7 @@
     </div>
     <div class="buttons">
       <div class="login_btn">
-        <a href="login.html">Login / Signup</a>
+        <a [routerLink]="['signin']">Login / Signup</a>
       </div>
       <div class="get_btn">
         <a href="start.html">Get Listed Today</a>
