@@ -6,11 +6,15 @@ import {HomeComponent} from './home/home.component';
 import {SignupComponent} from './auth/signup/signup.component';
 import {SigninComponent} from './auth/signin/signin.component';
 import {NavbarComponent} from './home/navbar/navbar.component';
+import { AceuilComponent } from './home/container/aceuil/aceuil.component';
+
 const approute: Routes = [
-  {path: 'signin', component: SigninComponent},
+  {path: '', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'nav', component: NavbarComponent},
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent,children:[
+  {path: '', component: AceuilComponent}
+    ]},
   {path: '**', component: HomeComponent}
 ];
 @NgModule({

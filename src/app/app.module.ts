@@ -13,6 +13,7 @@ import { SidebarComponent } from './home/sidebar/sidebar.component';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { TagsComponent } from './home/tags/tags.component';
+import { AceuilComponent } from './home/container/aceuil/aceuil.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TagsComponent } from './home/tags/tags.component';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    TagsComponent
+    TagsComponent,
+    AceuilComponent
   ],
   imports: [
     BrowserModule,
