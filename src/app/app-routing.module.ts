@@ -9,11 +9,15 @@ import {NavbarComponent} from './home/navbar/navbar.component';
 import { AceuilComponent } from './home/container/aceuil/aceuil.component';
 
 const approute: Routes = [
-  {path: '', component: SigninComponent},
-  {path: 'signup', component: SignupComponent},
+  {path: '', component: HomeComponent},
+  {path: 'signup', component: SignupComponent, children:[
+    {path: '', component: NavbarComponent}
+  ]
+},
+  {path: 'signin', component: SigninComponent},
   {path: 'nav', component: NavbarComponent},
   {path: 'home', component: HomeComponent,children:[
-  {path: '', component: AceuilComponent}
+    {path: '', component: AceuilComponent}
     ]},
   {path: '**', component: HomeComponent}
 ];
