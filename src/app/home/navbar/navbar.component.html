@@ -5,33 +5,42 @@
 
 <div class="header-top">
   <div class="wrap">
-    <div class="logo">
-      <a href=""><img src="./assets/images/logo.png" alt=""/></a>
-    </div>
+         <div class="logo">
+           <a href=""><img src="./assets/images/logo.png" alt=""/></a>
+          </div>
     <div class="cssmenu">
       <nav id="nav" role="navigation">
         <a href="#nav" title="Show navigation">Show navigation</a>
         <a href="#" title="Hide navigation">Hide navigation</a>
         <ul class="clearfix">
           <li class="active"><a [routerLink]="['/']">Home</a></li>
-          <li><a  [routerLink]="['/signin']"><span>Get Started</span></a></li>
-          <li><a href="work.html"><span>How it Works</span></a></li>
           <li><a href="pricing.html">Pricing</a></li>
           <li><a href="support.html">Support</a></li>
+          <li ><div class="get_btn">
+            <a href="start.html">Get Listed</a>
+          </div></li>
           <div class="clear"></div>
         </ul>
       </nav>
     </div>
-    <div class="buttons">
-      <div class="login_btn">
-        <a [routerLink]="['signin']">Login / Signup</a>
-      </div>
-      <div class="get_btn">
-        <a href="start.html">Get Listed Today</a>
-      </div>
+
+    <div *ngIf="info.token; else loggedOut">
+        <div class="buttons">
+          <div class="login_btn">
+            <a href="#" (click)="logout()">Logout</a>
+           </div>
+         </div>
+    </div>
       <div class="clear"></div>
     </div>
     <div class="clear"></div>
     <h2 class="head">Find the <span class="m_1">next event </span>You'll want <span class="m_1">to attend</span></h2>
   </div>
-</div>
+
+<ng-template #loggedOut>
+  <div class="buttons">
+    <div class="login_btn">
+      <a routerLink="auth/login">Login / Signup</a>
+    </div>
+  </div>
+</ng-template>
